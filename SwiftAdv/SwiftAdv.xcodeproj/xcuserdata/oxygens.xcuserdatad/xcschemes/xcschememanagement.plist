@@ -7,7 +7,25 @@
 		<key>SwiftAdv.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5175493022F82B7D00008F11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5175494422F82B7E00008F11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5175494F22F82B7E00008F11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
