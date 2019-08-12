@@ -33,11 +33,23 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Le7-JW-KRy">
-                        <barButtonItem key="leftBarButtonItem" title="Where am I?" id="tfF-9U-8SI">
-                            <connections>
-                                <action selector="toggleMarker:" destination="BYZ-38-t0r" id="o0c-dv-W42"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Start" id="ber-sx-lai">
+                                <connections>
+                                    <action selector="startTracking:" destination="BYZ-38-t0r" id="IIc-Dd-va5"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Stop" id="0MT-cL-ZWw">
+                                <connections>
+                                    <action selector="stopTracking:" destination="BYZ-38-t0r" id="Y54-zm-qfb"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Play" id="LF5-PO-H1s">
+                                <connections>
+                                    <action selector="playTracking:" destination="BYZ-38-t0r" id="Ap0-Wy-yjm"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" title="Find me" id="rpc-R1-WAS">
                             <connections>
                                 <action selector="goTo:" destination="BYZ-38-t0r" id="a3K-TI-KvH"/>
