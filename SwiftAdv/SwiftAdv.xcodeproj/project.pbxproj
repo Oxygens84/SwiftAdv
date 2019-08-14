@@ -15,6 +15,9 @@
 		5175493F22F82B7E00008F11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5175493D22F82B7E00008F11 /* LaunchScreen.storyboard */; };
 		5175494A22F82B7E00008F11 /* SwiftAdvTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175494922F82B7E00008F11 /* SwiftAdvTests.swift */; };
 		5175495522F82B7E00008F11 /* SwiftAdvUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175495422F82B7E00008F11 /* SwiftAdvUITests.swift */; };
+		5181DED122FBD17000F913BD /* BackgroundFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DED022FBD17000F913BD /* BackgroundFunctions.swift */; };
+		5181DED422FBD3C300F913BD /* MapFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DED322FBD3C300F913BD /* MapFunctions.swift */; };
+		5181DED82300B61900F913BD /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DED72300B61900F913BD /* Track.swift */; };
 		775C07E4599D30E1B14DD451 /* Pods_SwiftAdv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */; };
 		ECACC0845A9A8C363B7CB53A /* Pods_SwiftAdvTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C2CBD87622640F900C052B /* Pods_SwiftAdvTests.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +54,9 @@
 		5175495022F82B7E00008F11 /* SwiftAdvUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAdvUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5175495422F82B7E00008F11 /* SwiftAdvUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAdvUITests.swift; sourceTree = "<group>"; };
 		5175495622F82B7E00008F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5181DED022FBD17000F913BD /* BackgroundFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFunctions.swift; sourceTree = "<group>"; };
+		5181DED322FBD3C300F913BD /* MapFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFunctions.swift; sourceTree = "<group>"; };
+		5181DED72300B61900F913BD /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		56E8A8FB4F2C9091C966DBB1 /* Pods-SwiftAdv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdv.release.xcconfig"; path = "Target Support Files/Pods-SwiftAdv/Pods-SwiftAdv.release.xcconfig"; sourceTree = "<group>"; };
 		5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAdv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E44B9B645FA5F96986B6337 /* Pods-SwiftAdvUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdvUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftAdvUITests/Pods-SwiftAdvUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,11 +130,9 @@
 		5175493322F82B7D00008F11 /* SwiftAdv */ = {
 			isa = PBXGroup;
 			children = (
-				5175493422F82B7D00008F11 /* AppDelegate.swift */,
-				5175493622F82B7D00008F11 /* MapViewController.swift */,
-				5175493822F82B7D00008F11 /* Main.storyboard */,
-				5175493B22F82B7E00008F11 /* Assets.xcassets */,
-				5175493D22F82B7E00008F11 /* LaunchScreen.storyboard */,
+				5181DED52300B5EF00F913BD /* Application */,
+				5181DED62300B60000F913BD /* Models */,
+				5181DED222FBD17E00F913BD /* Controllers */,
 				5175494022F82B7E00008F11 /* Info.plist */,
 			);
 			path = SwiftAdv;
@@ -150,6 +154,35 @@
 				5175495622F82B7E00008F11 /* Info.plist */,
 			);
 			path = SwiftAdvUITests;
+			sourceTree = "<group>";
+		};
+		5181DED222FBD17E00F913BD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5175493622F82B7D00008F11 /* MapViewController.swift */,
+				5181DED322FBD3C300F913BD /* MapFunctions.swift */,
+				5181DED022FBD17000F913BD /* BackgroundFunctions.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5181DED52300B5EF00F913BD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5175493422F82B7D00008F11 /* AppDelegate.swift */,
+				5175493822F82B7D00008F11 /* Main.storyboard */,
+				5175493D22F82B7E00008F11 /* LaunchScreen.storyboard */,
+				5175493B22F82B7E00008F11 /* Assets.xcassets */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5181DED62300B60000F913BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5181DED72300B61900F913BD /* Track.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C9E0BEAA7ABEF2E8A992724D /* Pods */ = {
@@ -177,6 +210,7 @@
 				5175492E22F82B7D00008F11 /* Frameworks */,
 				5175492F22F82B7D00008F11 /* Resources */,
 				E7790E292A53B0C60443471D /* [CP] Copy Pods Resources */,
+				C16202CDF997FBF1E63A5E3B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,6 +271,11 @@
 				TargetAttributes = {
 					5175493022F82B7D00008F11 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5175494422F82B7E00008F11 = {
 						CreatedOnToolsVersion = 10.3;
@@ -340,6 +379,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C16202CDF997FBF1E63A5E3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftAdv/Pods-SwiftAdv-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftAdv/Pods-SwiftAdv-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftAdv/Pods-SwiftAdv-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E7790E292A53B0C60443471D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,6 +442,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5181DED422FBD3C300F913BD /* MapFunctions.swift in Sources */,
+				5181DED82300B61900F913BD /* Track.swift in Sources */,
+				5181DED122FBD17000F913BD /* BackgroundFunctions.swift in Sources */,
 				5175493722F82B7D00008F11 /* MapViewController.swift in Sources */,
 				5175493522F82B7D00008F11 /* AppDelegate.swift in Sources */,
 			);
