@@ -10,10 +10,6 @@ enum SeguesId: String {
     case goToDashboard = "goToDashboard"
 }
 
-//enum CellNames: String {
-//    case myFriendsCell = "FriendCell"
-//}
-
 enum Messages: String {
     case loginFailed = "Invalid login or password"
     case signUpFailed = "Invalid login or password for registration"

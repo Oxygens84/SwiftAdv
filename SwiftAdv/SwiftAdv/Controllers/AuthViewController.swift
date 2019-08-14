@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAMKeychain
 
 class AuthViewController: UIViewController {
 
@@ -17,7 +18,7 @@ class AuthViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         if checkAuthData(loginField.text!, passwordField.text!){
-            UserDefaults.standard.set(true, forKey: Keys.isLogin.rawValue)
+            saveAuthData()
             performSegue(withIdentifier: SeguesId.goToDashboard.rawValue, sender: nil)
         } else {
             performAlert(message: Messages.loginFailed.rawValue)
@@ -26,7 +27,7 @@ class AuthViewController: UIViewController {
     
     @IBAction func signup(_ sender: Any) {
         if checkSignUpData(loginField.text!, passwordField.text!){
-            UserDefaults.standard.set(false, forKey: Keys.isLogin.rawValue)
+            saveAuthData()
             performSegue(withIdentifier: SeguesId.goToDashboard.rawValue, sender: nil)
         } else {
             performAlert(message: Messages.signUpFailed.rawValue)
@@ -35,6 +36,7 @@ class AuthViewController: UIViewController {
     
     @IBAction func logOut(_ segue: UIStoryboardSegue){
         cleanFields()
+        deleteAuthData()
     }
     
     override func viewDidLoad() {

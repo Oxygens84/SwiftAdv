@@ -8,6 +8,7 @@ target 'SwiftAdv' do
   # Pods for SwiftAdv
   pod 'GoogleMaps'
   pod 'RealmSwift'
+  pod 'SAMKeychain'
 
   target 'SwiftAdvTests' do
     inherit! :search_paths
