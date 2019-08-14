@@ -17,26 +17,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        GMSServices.provideAPIKey("AIzaSyBd-kgM_UfTiHLChlrM1yPlGN2Apyt08z4")
+        var keys: NSDictionary?
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        if let dict = keys {
+            let apiKey = dict["apiKey"] as! String
+            GMSServices.provideAPIKey(apiKey)
+        }
 
+        let cache = URLCache(
+            memoryCapacity: 0,
+            diskCapacity: 0,
+            diskPath: nil)
+        URLCache.shared = cache
+        
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
+        let imageView = UIImageView(frame: self.window!.bounds)
+        imageView.tag = 666
+        imageView.image = UIImage(named: "background")
+        UIApplication.shared.keyWindow?.subviews.last?.addSubview(imageView)
     }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
+        if let imageView : UIImageView = UIApplication.shared.keyWindow?.subviews.last?.viewWithTag(666) as? UIImageView {
+            imageView.removeFromSuperview()
+        }
     }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-    }
-
-
+    
 }
 

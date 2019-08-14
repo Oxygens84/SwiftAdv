@@ -8,11 +8,14 @@
 
 import UIKit
 import RealmSwift
+import SAMKeychain
 
 extension AuthViewController {
 
     func configureAuthView(){
         passwordField.isSecureTextEntry = true
+        loginField.autocorrectionType = .no
+        SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
     }
     
     func checkAuthData(_ userLogin: String, _ userPassword: String) -> Bool{
@@ -58,5 +61,17 @@ extension AuthViewController {
     func cleanFields(){
         loginField.text = ""
         passwordField.text = ""
+    }
+    
+    func saveAuthData(){
+        UserDefaults.standard.set(true, forKey: Keys.isLogin.rawValue)
+        SAMKeychain.setPassword(loginField.text!, forService: "login", account: "Demo")
+        SAMKeychain.setPassword(passwordField.text!, forService: "password", account: "Demo")
+    }
+    
+    func deleteAuthData(){
+        UserDefaults.standard.set(false, forKey: Keys.isLogin.rawValue)
+        SAMKeychain.deletePassword(forService: "login", account: "Demo")
+        SAMKeychain.deletePassword(forService: "password", account: "Demo")
     }
 }
