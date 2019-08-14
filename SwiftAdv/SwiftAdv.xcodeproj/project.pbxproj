@@ -15,9 +15,13 @@
 		5175493F22F82B7E00008F11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5175493D22F82B7E00008F11 /* LaunchScreen.storyboard */; };
 		5175494A22F82B7E00008F11 /* SwiftAdvTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175494922F82B7E00008F11 /* SwiftAdvTests.swift */; };
 		5175495522F82B7E00008F11 /* SwiftAdvUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175495422F82B7E00008F11 /* SwiftAdvUITests.swift */; };
-		5181DED122FBD17000F913BD /* BackgroundFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DED022FBD17000F913BD /* BackgroundFunctions.swift */; };
-		5181DED422FBD3C300F913BD /* MapFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DED322FBD3C300F913BD /* MapFunctions.swift */; };
+		5181DED122FBD17000F913BD /* MapBackgroundExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DED022FBD17000F913BD /* MapBackgroundExtension.swift */; };
+		5181DED422FBD3C300F913BD /* MapLocationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DED322FBD3C300F913BD /* MapLocationExtension.swift */; };
 		5181DED82300B61900F913BD /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DED72300B61900F913BD /* Track.swift */; };
+		5181DEDA230488E700F913BD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DED9230488E700F913BD /* User.swift */; };
+		5181DEDC23048EE100F913BD /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEDB23048EE100F913BD /* AuthViewController.swift */; };
+		5181DEDE2304919100F913BD /* AuthExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEDD2304919100F913BD /* AuthExtension.swift */; };
+		5181DEE0230492EF00F913BD /* Dictionaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEDF230492EF00F913BD /* Dictionaries.swift */; };
 		775C07E4599D30E1B14DD451 /* Pods_SwiftAdv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */; };
 		ECACC0845A9A8C363B7CB53A /* Pods_SwiftAdvTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C2CBD87622640F900C052B /* Pods_SwiftAdvTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,9 +58,13 @@
 		5175495022F82B7E00008F11 /* SwiftAdvUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAdvUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5175495422F82B7E00008F11 /* SwiftAdvUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAdvUITests.swift; sourceTree = "<group>"; };
 		5175495622F82B7E00008F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5181DED022FBD17000F913BD /* BackgroundFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFunctions.swift; sourceTree = "<group>"; };
-		5181DED322FBD3C300F913BD /* MapFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFunctions.swift; sourceTree = "<group>"; };
+		5181DED022FBD17000F913BD /* MapBackgroundExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBackgroundExtension.swift; sourceTree = "<group>"; };
+		5181DED322FBD3C300F913BD /* MapLocationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationExtension.swift; sourceTree = "<group>"; };
 		5181DED72300B61900F913BD /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		5181DED9230488E700F913BD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5181DEDB23048EE100F913BD /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		5181DEDD2304919100F913BD /* AuthExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthExtension.swift; sourceTree = "<group>"; };
+		5181DEDF230492EF00F913BD /* Dictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionaries.swift; sourceTree = "<group>"; };
 		56E8A8FB4F2C9091C966DBB1 /* Pods-SwiftAdv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdv.release.xcconfig"; path = "Target Support Files/Pods-SwiftAdv/Pods-SwiftAdv.release.xcconfig"; sourceTree = "<group>"; };
 		5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAdv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E44B9B645FA5F96986B6337 /* Pods-SwiftAdvUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdvUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftAdvUITests/Pods-SwiftAdvUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,9 +167,11 @@
 		5181DED222FBD17E00F913BD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5181DEDB23048EE100F913BD /* AuthViewController.swift */,
+				5181DEDD2304919100F913BD /* AuthExtension.swift */,
 				5175493622F82B7D00008F11 /* MapViewController.swift */,
-				5181DED322FBD3C300F913BD /* MapFunctions.swift */,
-				5181DED022FBD17000F913BD /* BackgroundFunctions.swift */,
+				5181DED322FBD3C300F913BD /* MapLocationExtension.swift */,
+				5181DED022FBD17000F913BD /* MapBackgroundExtension.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				5175493422F82B7D00008F11 /* AppDelegate.swift */,
+				5181DEDF230492EF00F913BD /* Dictionaries.swift */,
 				5175493822F82B7D00008F11 /* Main.storyboard */,
 				5175493D22F82B7E00008F11 /* LaunchScreen.storyboard */,
 				5175493B22F82B7E00008F11 /* Assets.xcassets */,
@@ -181,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				5181DED72300B61900F913BD /* Track.swift */,
+				5181DED9230488E700F913BD /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,10 +454,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5181DED422FBD3C300F913BD /* MapFunctions.swift in Sources */,
+				5181DEE0230492EF00F913BD /* Dictionaries.swift in Sources */,
+				5181DED422FBD3C300F913BD /* MapLocationExtension.swift in Sources */,
 				5181DED82300B61900F913BD /* Track.swift in Sources */,
-				5181DED122FBD17000F913BD /* BackgroundFunctions.swift in Sources */,
+				5181DED122FBD17000F913BD /* MapBackgroundExtension.swift in Sources */,
+				5181DEDC23048EE100F913BD /* AuthViewController.swift in Sources */,
 				5175493722F82B7D00008F11 /* MapViewController.swift in Sources */,
+				5181DEDE2304919100F913BD /* AuthExtension.swift in Sources */,
+				5181DEDA230488E700F913BD /* User.swift in Sources */,
 				5175493522F82B7D00008F11 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

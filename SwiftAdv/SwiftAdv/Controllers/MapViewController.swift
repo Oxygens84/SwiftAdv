@@ -57,9 +57,12 @@ class MapViewController: UIViewController {
     
     @IBAction func playTracking(_ sender: Any) {
         if timer != nil {
-            let alertController = UIAlertController(title: "Warning!", message: "Stop current tracking activity", preferredStyle: .alert)
-            let confirmAction = UIAlertAction(title: "OK", style: .default){ (action) in
-                print("Error. Tracking is on")
+            let alertController = UIAlertController(title: Titles.warning.rawValue,
+                                                    message: Messages.stopTracking.rawValue,
+                                                    preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: Titles.ok.rawValue,
+                                              style: .default){ (action) in
+                print(LogMessages.activeTrackingError.rawValue)
             }
             alertController.addAction(confirmAction)
             present(alertController, animated: true, completion: nil)
@@ -70,7 +73,7 @@ class MapViewController: UIViewController {
             
             let realm = try! Realm()
             track = realm.objects(Track.self)
-            print(track ?? "no data")
+            print(track ?? LogMessages.noData.rawValue)
             for point in track {
                 self.currentCoordinate.latitude = point.latitude
                 self.currentCoordinate.longitude = point.longitude
