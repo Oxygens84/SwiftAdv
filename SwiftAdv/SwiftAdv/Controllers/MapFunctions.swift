@@ -13,35 +13,34 @@ import MapKit
 extension MapViewController: CLLocationManagerDelegate {
     
     func configureLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.requestAlwaysAuthorization()
-        locationManager?.allowsBackgroundLocationUpdates = true
-        locationManager?.delegate = self
-        locationManager?.pausesLocationUpdatesAutomatically = false
-        locationManager?.startMonitoringSignificantLocationChanges()
-        locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.delegate = self
+        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     }
     
-    func configureMap() {
-        let camera = GMSCameraPosition.camera(withTarget: coordinate, zoom: 17)
-        mapView.camera = camera
+    func configureMap(_ coordinate: CLLocationCoordinate2D) {
+        let position = GMSCameraPosition.camera(withTarget: coordinate, zoom: 17)
+        mapView.animate(to: position)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {return}
-        self.coordinate = location.coordinate
+        self.currentCoordinate = location.coordinate
         routePath?.add(location.coordinate)
         route?.path = routePath
-        mapView?.camera = GMSCameraPosition.init(target: location.coordinate,   zoom: 17)
-    
+        configureMap(location.coordinate)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        locationManager.stopUpdatingLocation()
         print(error)
     }
     
     func addMarker() {
-        let marker = GMSMarker(position: coordinate)
+        let marker = GMSMarker(position: currentCoordinate)
         marker.icon = GMSMarker.markerImage(with: .green)
         marker.map = mapView
         marker.title = "Map:"
@@ -56,4 +55,14 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }
 
+    func currentLocation() {
+        locationManager.requestLocation()
+    }
+    
+    func updateLocation() {
+        route = GMSPolyline()
+        routePath = GMSMutablePath()
+        route?.map = mapView
+    }
+    
 }

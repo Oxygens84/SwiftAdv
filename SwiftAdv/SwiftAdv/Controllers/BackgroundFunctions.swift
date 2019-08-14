@@ -11,6 +11,8 @@ import UIKit
 extension MapViewController {
     
     func beginTracker() {
+        mapView.clear()
+        locationManager.startUpdatingLocation()
         currentTrack = []
         beginBackgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
             guard let beginBackgroundTask = self?.beginBackgroundTask else { return }
@@ -18,16 +20,18 @@ extension MapViewController {
             self?.beginBackgroundTask = UIBackgroundTaskIdentifier.invalid
         }
         startTime = Date()
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-            
-            self?.locationManager?.requestLocation()
-            let point = Track()
-            point.configure(id: self!.currentTrack.count + 1,
-                            latitude: self!.coordinate.latitude,
-                            longitude: self!.coordinate.longitude)
-            self!.currentTrack.append(point)
-            
-            print("\( self!.currentTrack)")
+        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
+            self?.updateLocation()
+            let newLatitude = self!.currentCoordinate.latitude
+            let newLongitude = self!.currentCoordinate.longitude
+            if newLatitude != self!.currentTrack.last?.latitude
+                || newLongitude != self!.currentTrack.last?.longitude {
+                let point = Track()
+                point.configure(id: self!.currentTrack.count + 1,
+                                latitude: newLatitude,
+                                longitude: newLongitude)
+                self!.currentTrack.append(point)
+            }
             
             guard
                 let startTime = self?.startTime,
@@ -48,6 +52,7 @@ extension MapViewController {
     }
     
     func stopTracker() {
+        locationManager.stopUpdatingLocation()
         if timer != nil && beginBackgroundTask != nil {
             timer!.invalidate()
             timer = nil

@@ -14,26 +14,25 @@ import RealmSwift
 
 class MapViewController: UIViewController {
 
-    var coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
+    var currentCoordinate = CLLocationCoordinate2D(latitude: 37.33172861, longitude: -122.03068446)
+    var locationManager: CLLocationManager = CLLocationManager()
     var marker: GMSMarker?
-    var locationManager: CLLocationManager?
+    var route: GMSPolyline?
+    var routePath: GMSMutablePath?
     
     var timer: Timer?
     var startTime: Date?
     let timeInterval: TimeInterval = 180
     var beginBackgroundTask: UIBackgroundTaskIdentifier?
 
-    var route: GMSPolyline?
-    var routePath: GMSMutablePath?
-    
     var currentTrack: [Track] = []
     var track: Results<Track>!
     
     @IBOutlet weak var mapView: GMSMapView!
     
     @IBAction func goTo(_ sender: Any) {
-        locationManager?.requestLocation()
-        configureMap()
+        locationManager.requestLocation()
+        configureMap(currentCoordinate)
         addMarker()
     }
     
@@ -54,8 +53,7 @@ class MapViewController: UIViewController {
                 }
             }
         }
-    }
-    
+    }    
     
     @IBAction func playTracking(_ sender: Any) {
         if timer != nil {
@@ -66,12 +64,22 @@ class MapViewController: UIViewController {
             alertController.addAction(confirmAction)
             present(alertController, animated: true, completion: nil)
         } else {
+            locationManager.stopUpdatingLocation()
+            mapView.clear()
+            updateLocation()
+            
             let realm = try! Realm()
-            self.track = realm.objects(Track.self)
-            print(self.track ?? "no data")
+            track = realm.objects(Track.self)
+            print(track ?? "no data")
+            for point in track {
+                self.currentCoordinate.latitude = point.latitude
+                self.currentCoordinate.longitude = point.longitude
+                configureMap(self.currentCoordinate)
+                routePath?.add(self.currentCoordinate)
+                route?.path = routePath
+            }
         }
     }
-    
     
     @IBAction func toggleMarker(_ sender: Any) {
         if marker == nil {
@@ -79,20 +87,8 @@ class MapViewController: UIViewController {
         } else {
             removeMarker()
         }
-    }
-    
-    @IBAction func currentLocation(_ sender: Any) {
-        locationManager?.requestLocation()
-    }
+    }    
 
-    @IBAction func updateLocation(_ sender: Any) {
-        route?.map = nil
-        route = GMSPolyline()
-        routePath = GMSMutablePath()
-        route?.map = mapView
-        locationManager?.startUpdatingLocation()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLocationManager()
