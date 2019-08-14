@@ -1,5 +1,5 @@
 //
-//  MapFunctions.swift
+//  MapLocationExtension.swift
 //  SwiftAdv
 //
 //  Created by Oxana Lobysheva on 07/08/2019.
@@ -43,8 +43,8 @@ extension MapViewController: CLLocationManagerDelegate {
         let marker = GMSMarker(position: currentCoordinate)
         marker.icon = GMSMarker.markerImage(with: .green)
         marker.map = mapView
-        marker.title = "Map:"
-        marker.snippet = "You are here"
+        marker.title = Titles.map.rawValue
+        marker.snippet = Messages.userCurrentLocation.rawValue
         self.marker = marker
     }
     
