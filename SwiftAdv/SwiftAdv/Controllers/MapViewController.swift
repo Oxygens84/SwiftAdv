@@ -15,7 +15,7 @@ import RealmSwift
 class MapViewController: UIViewController {
 
     var currentCoordinate = CLLocationCoordinate2D(latitude: 37.33172861, longitude: -122.03068446)
-    var locationManager: CLLocationManager = CLLocationManager()
+    var locationManager: LocationManager = LocationManager.instance
     var marker: GMSMarker?
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
@@ -31,7 +31,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     
     @IBAction func goTo(_ sender: Any) {
-        locationManager.requestLocation()
+        locationManager.getCurrentLocation()
         configureMap(currentCoordinate)
         addMarker()
     }
@@ -67,7 +67,7 @@ class MapViewController: UIViewController {
             alertController.addAction(confirmAction)
             present(alertController, animated: true, completion: nil)
         } else {
-            locationManager.stopUpdatingLocation()
+            locationManager.stop()
             mapView.clear()
             updateLocation()
             

@@ -13,8 +13,9 @@ class AuthViewController: UIViewController {
 
     
     @IBOutlet weak var loginField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     
     @IBAction func login(_ sender: Any) {
         if checkAuthData(loginField.text!, passwordField.text!){
@@ -42,6 +43,7 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureAuthView()
+        configureAuthBindings()
     }
     
 }

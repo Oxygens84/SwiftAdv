@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 import SAMKeychain
+import RxCocoa
+import RxSwift
 
 extension AuthViewController {
 
@@ -16,6 +18,26 @@ extension AuthViewController {
         passwordField.isSecureTextEntry = true
         loginField.autocorrectionType = .no
         SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
+    }
+    
+    func configureAuthBindings(){
+        Observable
+            .combineLatest(loginField.rx.text, passwordField.rx.text)
+            .map{ login, password in
+                return !(login ?? "").isEmpty && (password ?? "").count >= 6
+            }
+            .bind{ [weak loginButton, signupButton] inputFilled in
+                loginButton?.isEnabled = inputFilled
+                signupButton?.isEnabled = inputFilled
+                if inputFilled {
+                    loginButton?.backgroundColor = UIColor.purple
+                    signupButton?.backgroundColor = UIColor.purple
+                } else {
+                    loginButton?.backgroundColor = UIColor.darkGray
+                    signupButton?.backgroundColor = UIColor.darkGray
+                }
+                
+        }
     }
     
     func checkAuthData(_ userLogin: String, _ userPassword: String) -> Bool{
@@ -34,7 +56,7 @@ extension AuthViewController {
     func checkSignUpData(_ userLogin: String, _ userPassword: String) -> Bool{
         if userLogin != "" && userPassword != "" {
             let realm = try! Realm()
-            //print(Realm.Configuration.defaultConfiguration.fileURL as Any)
+            print("RealmDataBase =  \(Realm.Configuration.defaultConfiguration.fileURL as Any)")
             let user = User()
             user.configure(login: userLogin, password: userPassword)
             try! realm.write {

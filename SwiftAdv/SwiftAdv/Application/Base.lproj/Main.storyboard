@@ -156,8 +156,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="s5V-sg-6Vj"/>
                     <connections>
+                        <outlet property="loginButton" destination="S5R-n9-3kb" id="NOZ-AH-mWF"/>
                         <outlet property="loginField" destination="EaE-rB-0Cu" id="xyX-Do-wfK"/>
                         <outlet property="passwordField" destination="PZK-wd-zEd" id="v2w-cY-T84"/>
+                        <outlet property="signupButton" destination="m8f-6M-KVV" id="aFp-Ss-Zet"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToDashboard" id="t5v-Pw-zQW"/>
                     </connections>
                 </viewController>

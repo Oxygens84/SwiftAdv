@@ -12,7 +12,7 @@ extension MapViewController {
     
     func beginTracker() {
         mapView.clear()
-        locationManager.startUpdatingLocation()
+        locationManager.start()
         currentTrack = []
         beginBackgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
             guard let beginBackgroundTask = self?.beginBackgroundTask else { return }
@@ -52,7 +52,7 @@ extension MapViewController {
     }
     
     func stopTracker() {
-        locationManager.stopUpdatingLocation()
+        locationManager.stop()
         if timer != nil && beginBackgroundTask != nil {
             timer!.invalidate()
             timer = nil

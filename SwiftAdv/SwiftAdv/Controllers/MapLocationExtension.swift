@@ -12,31 +12,19 @@ import MapKit
 
 extension MapViewController: CLLocationManagerDelegate {
     
-    func configureLocationManager() {
-        locationManager.requestAlwaysAuthorization()
-        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.delegate = self
-        locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.startMonitoringSignificantLocationChanges()
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-    }
-    
     func configureMap(_ coordinate: CLLocationCoordinate2D) {
         let position = GMSCameraPosition.camera(withTarget: coordinate, zoom: 17)
         mapView.animate(to: position)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {return}
-        self.currentCoordinate = location.coordinate
-        routePath?.add(location.coordinate)
-        route?.path = routePath
-        configureMap(location.coordinate)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        locationManager.stopUpdatingLocation()
-        print(error)
+    func configureLocationManager() {
+        locationManager.location.asObservable().bind{ [weak self] location in
+        guard let location = location else {return}
+        self?.currentCoordinate = location.coordinate
+        self?.routePath?.add(location.coordinate)
+        self?.route?.path = self?.routePath
+        self?.configureMap(location.coordinate)
+        }        
     }
     
     func addMarker() {
@@ -55,10 +43,6 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }
 
-    func currentLocation() {
-        locationManager.requestLocation()
-    }
-    
     func updateLocation() {
         route = GMSPolyline()
         routePath = GMSMutablePath()

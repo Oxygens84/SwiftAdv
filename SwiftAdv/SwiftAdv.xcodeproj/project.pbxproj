@@ -23,6 +23,7 @@
 		5181DEDE2304919100F913BD /* AuthExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEDD2304919100F913BD /* AuthExtension.swift */; };
 		5181DEE0230492EF00F913BD /* Dictionaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEDF230492EF00F913BD /* Dictionaries.swift */; };
 		5181DEE42304CA1400F913BD /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5181DEE32304CA1400F913BD /* Keys.plist */; };
+		5181DEE72309AABD00F913BD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEE62309AABD00F913BD /* LocationManager.swift */; };
 		775C07E4599D30E1B14DD451 /* Pods_SwiftAdv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */; };
 		ECACC0845A9A8C363B7CB53A /* Pods_SwiftAdvTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C2CBD87622640F900C052B /* Pods_SwiftAdvTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		5181DEDD2304919100F913BD /* AuthExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthExtension.swift; sourceTree = "<group>"; };
 		5181DEDF230492EF00F913BD /* Dictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionaries.swift; sourceTree = "<group>"; };
 		5181DEE32304CA1400F913BD /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		5181DEE62309AABD00F913BD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		56E8A8FB4F2C9091C966DBB1 /* Pods-SwiftAdv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdv.release.xcconfig"; path = "Target Support Files/Pods-SwiftAdv/Pods-SwiftAdv.release.xcconfig"; sourceTree = "<group>"; };
 		5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAdv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E44B9B645FA5F96986B6337 /* Pods-SwiftAdvUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdvUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftAdvUITests/Pods-SwiftAdvUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				5181DED52300B5EF00F913BD /* Application */,
 				5181DED62300B60000F913BD /* Models */,
+				5181DEE52309AA9D00F913BD /* Managers */,
 				5181DED222FBD17E00F913BD /* Controllers */,
 				5175494022F82B7E00008F11 /* Info.plist */,
 				5181DEE32304CA1400F913BD /* Keys.plist */,
@@ -198,6 +201,14 @@
 				5181DED9230488E700F913BD /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5181DEE52309AA9D00F913BD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				5181DEE62309AABD00F913BD /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C9E0BEAA7ABEF2E8A992724D /* Pods */ = {
@@ -460,6 +471,7 @@
 			files = (
 				5181DEE0230492EF00F913BD /* Dictionaries.swift in Sources */,
 				5181DED422FBD3C300F913BD /* MapLocationExtension.swift in Sources */,
+				5181DEE72309AABD00F913BD /* LocationManager.swift in Sources */,
 				5181DED82300B61900F913BD /* Track.swift in Sources */,
 				5181DED122FBD17000F913BD /* MapBackgroundExtension.swift in Sources */,
 				5181DEDC23048EE100F913BD /* AuthViewController.swift in Sources */,
