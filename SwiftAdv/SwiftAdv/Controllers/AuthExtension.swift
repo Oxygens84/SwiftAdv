@@ -6,7 +6,6 @@
 //  Copyright © 2019 Oxana Lobysheva. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
 import SAMKeychain
 import RxCocoa
@@ -15,8 +14,11 @@ import RxSwift
 extension AuthViewController {
 
     func configureAuthView(){
+        
+        //leak due to check
         passwordField.isSecureTextEntry = true
         loginField.autocorrectionType = .no
+        
         SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
     }
     
