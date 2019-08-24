@@ -24,6 +24,7 @@
 		5181DEE0230492EF00F913BD /* Dictionaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEDF230492EF00F913BD /* Dictionaries.swift */; };
 		5181DEE42304CA1400F913BD /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5181DEE32304CA1400F913BD /* Keys.plist */; };
 		5181DEE72309AABD00F913BD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEE62309AABD00F913BD /* LocationManager.swift */; };
+		5181DEE923109F6600F913BD /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEE823109F6600F913BD /* NotificationManager.swift */; };
 		775C07E4599D30E1B14DD451 /* Pods_SwiftAdv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */; };
 		ECACC0845A9A8C363B7CB53A /* Pods_SwiftAdvTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C2CBD87622640F900C052B /* Pods_SwiftAdvTests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,8 @@
 		5181DEDF230492EF00F913BD /* Dictionaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionaries.swift; sourceTree = "<group>"; };
 		5181DEE32304CA1400F913BD /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		5181DEE62309AABD00F913BD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		5181DEE823109F6600F913BD /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		5181DEEA2311E7A200F913BD /* SwiftAdv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftAdv.entitlements; sourceTree = "<group>"; };
 		56E8A8FB4F2C9091C966DBB1 /* Pods-SwiftAdv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdv.release.xcconfig"; path = "Target Support Files/Pods-SwiftAdv/Pods-SwiftAdv.release.xcconfig"; sourceTree = "<group>"; };
 		5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAdv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E44B9B645FA5F96986B6337 /* Pods-SwiftAdvUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdvUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftAdvUITests/Pods-SwiftAdvUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 		5175493322F82B7D00008F11 /* SwiftAdv */ = {
 			isa = PBXGroup;
 			children = (
+				5181DEEA2311E7A200F913BD /* SwiftAdv.entitlements */,
 				5181DED52300B5EF00F913BD /* Application */,
 				5181DED62300B60000F913BD /* Models */,
 				5181DEE52309AA9D00F913BD /* Managers */,
@@ -207,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				5181DEE62309AABD00F913BD /* LocationManager.swift */,
+				5181DEE823109F6600F913BD /* NotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -299,6 +304,9 @@
 						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -473,6 +481,7 @@
 				5181DED422FBD3C300F913BD /* MapLocationExtension.swift in Sources */,
 				5181DEE72309AABD00F913BD /* LocationManager.swift in Sources */,
 				5181DED82300B61900F913BD /* Track.swift in Sources */,
+				5181DEE923109F6600F913BD /* NotificationManager.swift in Sources */,
 				5181DED122FBD17000F913BD /* MapBackgroundExtension.swift in Sources */,
 				5181DEDC23048EE100F913BD /* AuthViewController.swift in Sources */,
 				5175493722F82B7D00008F11 /* MapViewController.swift in Sources */,
@@ -654,7 +663,9 @@
 			baseConfigurationReference = 3E012D109CE358C591A27E4D /* Pods-SwiftAdv.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftAdv/SwiftAdv.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R2VJ6NW7EN;
 				INFOPLIST_FILE = SwiftAdv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -672,7 +683,9 @@
 			baseConfigurationReference = 56E8A8FB4F2C9091C966DBB1 /* Pods-SwiftAdv.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwiftAdv/SwiftAdv.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R2VJ6NW7EN;
 				INFOPLIST_FILE = SwiftAdv/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

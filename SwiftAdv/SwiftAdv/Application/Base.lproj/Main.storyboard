@@ -116,7 +116,7 @@
                                     <action selector="signup:" destination="7hD-mb-pyW" eventType="touchUpInside" id="o63-q4-v4a"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HELLO, my friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="120-60-8CG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME ON BOARD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="120-60-8CG">
                                 <rect key="frame" x="30" y="268" width="354" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mml-vj-Uot"/>

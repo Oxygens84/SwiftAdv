@@ -15,6 +15,7 @@ enum Messages: String {
     case signUpFailed = "Invalid login or password for registration"
     case stopTracking = "Stop current tracking activity, please"
     case userCurrentLocation = "You are here"
+    case newMessage = "You have a message"
 }
 
 enum LogMessages: String {
@@ -27,6 +28,7 @@ enum Titles: String {
     case error = "ERROR"
     case ok = "OK"
     case map = "MAP:"
+    case notification = "NOTIFICATION CENTER"
 }
 
 enum Keys: String {

@@ -14,11 +14,8 @@ import RxSwift
 extension AuthViewController {
 
     func configureAuthView(){
-        
-        //leak due to check
         passwordField.isSecureTextEntry = true
         loginField.autocorrectionType = .no
-        
         SAMKeychain.setAccessibilityType(kSecAttrAccessibleWhenUnlocked)
     }
     
