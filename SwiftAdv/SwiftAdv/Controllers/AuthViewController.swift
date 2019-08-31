@@ -6,7 +6,6 @@
 //  Copyright © 2019 Oxana Lobysheva. All rights reserved.
 //
 
-import UIKit
 import SAMKeychain
 
 class AuthViewController: UIViewController {
@@ -23,7 +22,7 @@ class AuthViewController: UIViewController {
             performSegue(withIdentifier: SeguesId.goToDashboard.rawValue, sender: nil)
         } else {
             performAlert(message: Messages.loginFailed.rawValue)
-        }        
+        }
     }
     
     @IBAction func signup(_ sender: Any) {

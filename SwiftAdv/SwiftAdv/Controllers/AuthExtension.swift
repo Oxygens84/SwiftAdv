@@ -6,7 +6,6 @@
 //  Copyright © 2019 Oxana Lobysheva. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
 import SAMKeychain
 import RxCocoa
