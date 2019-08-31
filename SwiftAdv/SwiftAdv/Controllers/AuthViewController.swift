@@ -6,7 +6,10 @@
 //  Copyright © 2019 Oxana Lobysheva. All rights reserved.
 //
 
+import UIKit
+import AVFoundation
 import SAMKeychain
+import Photos
 
 class AuthViewController: UIViewController {
 
@@ -37,6 +40,16 @@ class AuthViewController: UIViewController {
     @IBAction func logOut(_ segue: UIStoryboardSegue){
         cleanFields()
         deleteAuthData()
+    }
+    
+    @IBAction func takeSelfie(_ sender: Any) {
+        //.photoLibrary
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {return}
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .camera
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        self.present(imagePickerController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

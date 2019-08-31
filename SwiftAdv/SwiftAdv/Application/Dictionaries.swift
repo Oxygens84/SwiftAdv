@@ -8,6 +8,7 @@
 
 enum SeguesId: String {
     case goToDashboard = "goToDashboard"
+    case goToSelfie = "goToSelfie"
 }
 
 enum Messages: String {
@@ -33,4 +34,8 @@ enum Titles: String {
 
 enum Keys: String {
     case isLogin = "isLogin"
+}
+
+enum Defaults: String {
+    case selfie = "avatar"
 }

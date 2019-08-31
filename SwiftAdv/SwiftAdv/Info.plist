@@ -4,6 +4,17 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>MKDirectionsRequest</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.apple.maps.directionsrequest</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,19 +31,26 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array>
+		<string>MKDirectionsModeCar</string>
+		<string>MKDirectionsModeSubway</string>
+	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>For calendar</string>
+	<key>NSCameraUsageDescription</key>
+	<string>For selfie</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Demo</string>
+	<string>For location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Demo
-&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
-&lt;plist version="1.0"&gt;
-&lt;string&gt;Demo&lt;/string&gt;
-&lt;/plist&gt;
-Demo</string>
+	<string>For location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Demo</string>
+	<string>For location</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>For library</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
 		<string>fetch</string>
 		<string>location</string>
 		<string>remote-notification</string>
