@@ -28,6 +28,8 @@ class MapViewController: UIViewController {
     var currentTrack: [Track] = []
     var track: Results<Track>!
     
+    let fm = AvatarManager()
+    
     @IBOutlet weak var mapView: GMSMapView!
     
     @IBAction func goTo(_ sender: Any) {

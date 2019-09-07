@@ -29,6 +29,16 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func addMarker() {
         let marker = GMSMarker(position: currentCoordinate)
+        var markerImage: UIImage;
+        if UIImage(contentsOfFile: fm.getAvatarPath()) != nil {
+            markerImage = UIImage(contentsOfFile: fm.getAvatarPath())!
+        } else {
+            markerImage = UIImage(named: Defaults.selfie.rawValue)!
+        }
+        markerImage.withRenderingMode(.alwaysTemplate)
+        let markerView = UIImageView(image: markerImage)
+        marker.iconView = markerView
+        
         marker.icon = GMSMarker.markerImage(with: .green)
         marker.map = mapView
         marker.title = Titles.map.rawValue

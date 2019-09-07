@@ -25,6 +25,11 @@
 		5181DEE42304CA1400F913BD /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5181DEE32304CA1400F913BD /* Keys.plist */; };
 		5181DEE72309AABD00F913BD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEE62309AABD00F913BD /* LocationManager.swift */; };
 		5181DEE923109F6600F913BD /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181DEE823109F6600F913BD /* NotificationManager.swift */; };
+		51A6CABB231AABBE0041008E /* SelfiExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6CABA231AABBE0041008E /* SelfiExtension.swift */; };
+		51A6CABD231AB06C0041008E /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6CABC231AB06C0041008E /* SelfieViewController.swift */; };
+		51A6CAC1231AC8F40041008E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A6CAC0231AC8F40041008E /* MapKit.framework */; };
+		51A6CAC3231AC9370041008E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51A6CAC2231AC9370041008E /* AudioToolbox.framework */; };
+		51A6CAC5231ACFEF0041008E /* AvatarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A6CAC4231ACFEF0041008E /* AvatarManager.swift */; };
 		775C07E4599D30E1B14DD451 /* Pods_SwiftAdv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */; };
 		ECACC0845A9A8C363B7CB53A /* Pods_SwiftAdvTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C2CBD87622640F900C052B /* Pods_SwiftAdvTests.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +77,11 @@
 		5181DEE62309AABD00F913BD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5181DEE823109F6600F913BD /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		5181DEEA2311E7A200F913BD /* SwiftAdv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftAdv.entitlements; sourceTree = "<group>"; };
+		51A6CABA231AABBE0041008E /* SelfiExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfiExtension.swift; sourceTree = "<group>"; };
+		51A6CABC231AB06C0041008E /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
+		51A6CAC0231AC8F40041008E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		51A6CAC2231AC9370041008E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		51A6CAC4231ACFEF0041008E /* AvatarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarManager.swift; sourceTree = "<group>"; };
 		56E8A8FB4F2C9091C966DBB1 /* Pods-SwiftAdv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdv.release.xcconfig"; path = "Target Support Files/Pods-SwiftAdv/Pods-SwiftAdv.release.xcconfig"; sourceTree = "<group>"; };
 		5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAdv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E44B9B645FA5F96986B6337 /* Pods-SwiftAdvUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAdvUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftAdvUITests/Pods-SwiftAdvUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,7 +97,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51A6CAC1231AC8F40041008E /* MapKit.framework in Frameworks */,
 				775C07E4599D30E1B14DD451 /* Pods_SwiftAdv.framework in Frameworks */,
+				51A6CAC3231AC9370041008E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +125,8 @@
 		2F8DA5CF6051770E17604A24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				51A6CAC2231AC9370041008E /* AudioToolbox.framework */,
+				51A6CAC0231AC8F40041008E /* MapKit.framework */,
 				5E83374E1013C9F1F90CCFA3 /* Pods_SwiftAdv.framework */,
 				D7C2CBD87622640F900C052B /* Pods_SwiftAdvTests.framework */,
 				BB46C8E57729F2F1392F9E17 /* Pods_SwiftAdvUITests.framework */,
@@ -179,9 +193,11 @@
 			children = (
 				5181DEDB23048EE100F913BD /* AuthViewController.swift */,
 				5181DEDD2304919100F913BD /* AuthExtension.swift */,
+				51A6CABA231AABBE0041008E /* SelfiExtension.swift */,
 				5175493622F82B7D00008F11 /* MapViewController.swift */,
 				5181DED322FBD3C300F913BD /* MapLocationExtension.swift */,
 				5181DED022FBD17000F913BD /* MapBackgroundExtension.swift */,
+				51A6CABC231AB06C0041008E /* SelfieViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +228,7 @@
 			children = (
 				5181DEE62309AABD00F913BD /* LocationManager.swift */,
 				5181DEE823109F6600F913BD /* NotificationManager.swift */,
+				51A6CAC4231ACFEF0041008E /* AvatarManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -305,6 +322,15 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Multipath = {
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -477,13 +503,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51A6CAC5231ACFEF0041008E /* AvatarManager.swift in Sources */,
 				5181DEE0230492EF00F913BD /* Dictionaries.swift in Sources */,
+				51A6CABD231AB06C0041008E /* SelfieViewController.swift in Sources */,
 				5181DED422FBD3C300F913BD /* MapLocationExtension.swift in Sources */,
 				5181DEE72309AABD00F913BD /* LocationManager.swift in Sources */,
 				5181DED82300B61900F913BD /* Track.swift in Sources */,
 				5181DEE923109F6600F913BD /* NotificationManager.swift in Sources */,
 				5181DED122FBD17000F913BD /* MapBackgroundExtension.swift in Sources */,
 				5181DEDC23048EE100F913BD /* AuthViewController.swift in Sources */,
+				51A6CABB231AABBE0041008E /* SelfiExtension.swift in Sources */,
 				5175493722F82B7D00008F11 /* MapViewController.swift in Sources */,
 				5181DEDE2304919100F913BD /* AuthExtension.swift in Sources */,
 				5181DEDA230488E700F913BD /* User.swift in Sources */,
